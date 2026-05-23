@@ -1,67 +1,31 @@
-# <img src="https://raw.githubusercontent.com/flutter/website/main/src/_assets/image/flutter-lockup-bg.jpg" width="28" alt="Flutter Logo"> Profile Screen UI Collection — Flutter Assignment
+# <img src="https://storage.googleapis.com/cms-storage-bucket/ec64036b4eacc9f38743.svg" width="28" alt="Flutter Logo"> Instagram Profile Screen — Flutter UI Clone
 
 > **Module 2 · Class 2 Assignment**
 > National Android Development Bootcamp by **BDApps & Ostad**
 
-A modern Flutter UI assignment project where I replicate popular social media profile screens using only **Flutter frontend UI design**.
-The goal of this project is to practice responsive layouts, widget structuring, reusable UI components, and modern mobile app design principles in Flutter.
-
-This repository is originally forked from the mentor-provided starter project and extended with custom implementations and redesigns.
+A pixel-perfect Flutter UI clone of the **Instagram profile screen** built as a frontend-only assignment project.
+The goal is to practice responsive layouts, reusable widget architecture, Material 3 theming, and modern mobile UI design principles — with full **Light Mode** and **Dark Mode** support.
 
 ---
 
 ## 📱 Project Overview
 
-In this assignment, I recreated profile screens inspired by popular social media platforms including:
+This assignment replicates the real Instagram profile screen of **@shahjalal_mahmud**, matching every detail:
+top app bar, profile stats, bio, story highlights, posts grid, tab bar, and bottom navigation — all in Flutter, with no backend or authentication.
 
-* Instagram
-* Facebook
-* LinkedIn
-* GitHub
+The focus is entirely on:
 
-The focus of the assignment is only on:
-
-✅ Frontend UI Design
-✅ Responsive Layout
-✅ Flutter Widget Practice
-✅ Clean Code Structure
-✅ Modern Design Replication
-
-No backend, authentication, database, or API integration is included.
+✅ Pixel-perfect UI replication
+✅ Clean, reusable widget architecture
+✅ Light Mode & Dark Mode theming
+✅ Responsive & scrollable layout
+✅ Modern Flutter best practices
 
 ---
 
-# ✨ Features
+## 📸 Screenshots
 
-## 🎨 UI Replication
-
-* Instagram-style profile screen
-* Facebook-inspired profile layout
-* LinkedIn profile design
-* GitHub profile interface
-
-## 📱 Responsive Design
-
-* Optimized for different screen sizes
-* Scrollable layouts
-* Adaptive spacing and alignment
-
-## 🧩 Flutter Concepts Used
-
-* Stateless & Stateful Widgets
-* Custom Widgets
-* Column & Row Layouts
-* ListView & GridView
-* Stack & Positioned Widgets
-* TabBar & TabBarView
-* Custom Styling
-* Asset Management
-
----
-
-# 📸 Screenshots
-
-## 🎯 Original Instagram Profile (Reference UI)
+### 🎯 Reference UI — Real Instagram App
 
 | Dark Mode                                                      | Light Mode                                                       |
 |----------------------------------------------------------------|------------------------------------------------------------------|
@@ -69,7 +33,7 @@ No backend, authentication, database, or API integration is included.
 
 ---
 
-## 📱 Flutter Assignment Output
+### 📱 Flutter Assignment Output
 
 | Dark Mode                                                  | Light Mode                                                   |
 |------------------------------------------------------------|--------------------------------------------------------------|
@@ -77,77 +41,130 @@ No backend, authentication, database, or API integration is included.
 
 ---
 
-# 🛠️ Tech Stack
+## ✨ Features
 
-| Technology               | Usage                   |
-|--------------------------|-------------------------|
-| Flutter                  | UI Development          |
-| Dart                     | Programming Language    |
-| Material Design          | UI Components           |
-| Android Studio / VS Code | Development Environment |
+### 🎨 UI Components Replicated
+
+| Component            | Description                                                    |
+|----------------------|----------------------------------------------------------------|
+| **Top App Bar**      | Lock icon + username + dropdown arrow, Threads icon, Menu icon |
+| **Profile Header**   | Circular avatar with story ring gradient and `+` badge         |
+| **Profile Stats**    | Posts · Followers · Following counts in bold                   |
+| **Bio Section**      | Multiline bio text                                             |
+| **Action Chips**     | Threads username chip, Facebook profile chip, Add chip         |
+| **Profile Buttons**  | Edit profile + Share profile — identical to Instagram's style  |
+| **Story Highlights** | Horizontally scrollable highlights with New `+` button         |
+| **Tab Bar**          | Grid · Reels · Collab · Tagged tabs with active underline      |
+| **Posts Grid**       | 3-column square image grid with multi-photo indicator icons    |
+| **Bottom Nav Bar**   | Home · Reels · Add · Search · Profile — Profile tab selected   |
+
+### 🌗 Theming
+- Full **Light Mode** — white background, dark text
+- Full **Dark Mode** — black background, white text
+- `ThemeMode.system` — automatically follows device preference
+- Instagram-accurate color tokens for both themes
 
 ---
 
-# 📂 Project Structure
+## 🧩 Flutter Concepts Used
 
-```bash
+- Stateless & Stateful Widgets
+- `CustomScrollView` with Slivers (`SliverAppBar`, `SliverGrid`, `SliverToBoxAdapter`)
+- `Column`, `Row`, `Stack`, `Positioned`
+- `ListView` (horizontal highlights scroll)
+- `ClipOval` for circular images
+- `Material 3` with custom `ThemeData`
+- `ColorScheme` for light/dark theming
+- `MediaQuery` & `SafeArea` for responsiveness
+- `const` constructors throughout for performance
+- Asset management (`pubspec.yaml` configuration)
+
+---
+
+## 🗂 Project Structure
+
+```
 lib/
 │
-├── main.dart
+├── main.dart                               # App entry point, ThemeMode.system
 │
-├── screens/
-│   ├── instagram_profile_screen.dart
-│   ├── facebook_profile_screen.dart
-│   ├── linkedin_profile_screen.dart
-│   └── github_profile_screen.dart
+├── core/
+│   ├── constants/
+│   │   ├── app_colors.dart                 # All color tokens — dark & light
+│   │   ├── app_sizes.dart                  # Spacing, radii, font sizes
+│   │   └── app_strings.dart                # All text & label constants
+│   └── theme/
+│       └── app_theme.dart                  # Light & Dark ThemeData
 │
-├── widgets/
-│   ├── profile_header.dart
-│   ├── profile_stats.dart
-│   ├── profile_post_grid.dart
-│   └── custom_buttons.dart
+├── data/
+│   └── models/
+│       ├── highlight_model.dart            # HighlightModel + dummy data
+│       └── post_model.dart                 # PostModel + dummy data
 │
-└── assets/
-    ├── images/
-    └── screenshots/
+├── presentation/
+│   ├── screens/
+│   │   └── instagram_profile_screen.dart  # Main screen — Sliver-based scroll
+│   └── widgets/
+│       ├── profile_header.dart            # Avatar + name + pronouns
+│       ├── profile_stats.dart             # Posts / Followers / Following
+│       ├── profile_bio.dart               # Bio text
+│       ├── action_chip.dart               # Threads / Facebook / Add chips
+│       ├── profile_buttons.dart           # Edit profile + Share profile
+│       ├── highlights_section.dart        # Horizontal scroll highlights row
+│       ├── highlight_item.dart            # Single highlight circle + label
+│       ├── profile_tabs.dart              # Tab bar with active indicator
+│       ├── posts_grid.dart                # SliverGrid of posts
+│       ├── post_item.dart                 # Single post tile with overlay icon
+│       └── bottom_nav_bar.dart            # 5-item bottom navigation bar
+│
+assets/
+├── images/                                # profile.jpg · post_*.jpg · highlight_*.jpg
+├── icons/                                 # Reserved for custom SVG icons
+└── screenshots/                           # Reference & output screenshots
 ```
 
 ---
 
-# 🚀 Getting Started
+## 🚀 Getting Started
 
-## Prerequisites
+### Prerequisites
 
-Before running this project, make sure you have installed:
+Make sure you have these installed:
 
-* Flutter SDK
-* Dart SDK
-* Android Studio / VS Code
-* Android Emulator or Physical Device
+- Flutter SDK (3.x or above)
+- Dart SDK
+- Android Studio or VS Code
+- Android Emulator or Physical Device
 
 ---
 
-## 🔧 Installation
+### 🔧 Installation
 
-### 1️⃣ Clone the Repository
+**1. Clone the repository**
 
 ```bash
 git clone <your-repository-link>
+cd instagram_profile
 ```
 
-### 2️⃣ Navigate to Project Folder
-
-```bash
-cd profilescreen
-```
-
-### 3️⃣ Install Dependencies
+**2. Install dependencies**
 
 ```bash
 flutter pub get
 ```
 
-### 4️⃣ Run the Project
+**3. Add your photos** *(optional — placeholder images are already included)*
+
+Replace the images in `assets/images/` with your own:
+
+| File                        | Purpose                               |
+|-----------------------------|---------------------------------------|
+| `profile.jpg`               | Profile picture (header + bottom nav) |
+| `highlight_itsme.jpg`       | "It's me 🙂" highlight cover          |
+| `highlight_dark.jpg`        | "Dark 🖤" highlight cover             |
+| `post_1.jpg` → `post_9.jpg` | Posts grid images                     |
+
+**4. Run the app**
 
 ```bash
 flutter run
@@ -155,78 +172,113 @@ flutter run
 
 ---
 
-# 🎯 Assignment Objective
+### 🌗 Switching Theme Mode
+
+The app follows system appearance by default. To force a theme during development, edit `main.dart`:
+
+```dart
+themeMode: ThemeMode.dark,    // Force dark mode
+themeMode: ThemeMode.light,   // Force light mode
+themeMode: ThemeMode.system,  // Follow device setting (default)
+```
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology               | Usage                   |
+|--------------------------|-------------------------|
+| Flutter 3.x              | UI Development          |
+| Dart 3.x                 | Programming Language    |
+| Material Design 3        | UI Components & Theming |
+| Android Studio / VS Code | Development Environment |
+
+> ⚡ Zero third-party packages — built entirely with Flutter's built-in widgets.
+
+---
+
+## ✅ Code Quality Highlights
+
+- `const` constructors used everywhere for rebuild performance
+- No magic numbers — all sizes/colors/strings live in `core/constants/`
+- `SliverGrid` + `SliverAppBar` for smooth, jank-free unified scrolling
+- `errorBuilder` fallback on every `Image.asset` call — app never crashes on missing assets
+- Theme-aware colors via `Theme.of(context).brightness` throughout
+- Clean separation: models → widgets → screen — nothing dumped into `main.dart`
+
+---
+
+## 🎯 Assignment Objective
 
 The main objective of this assignment is to:
 
-* Practice Flutter UI development
-* Understand layout building
-* Learn responsive mobile design
-* Improve Flutter widget composition
-* Replicate real-world application interfaces
+- Practice Flutter UI development
+- Understand widget tree structure and layout building
+- Learn responsive mobile design principles
+- Build and organize reusable widget components
+- Replicate real-world application interfaces accurately
 
 ---
 
-# 🧠 What I Learned
+## 🧠 What I Learned
 
-During this assignment, I practiced and improved my understanding of:
+Through this assignment I practiced and improved my understanding of:
 
-* Flutter widget tree structure
-* UI replication techniques
-* Responsive design handling
-* Reusable component architecture
-* Layout alignment and spacing
-* Managing complex nested widgets
-
----
-
-# 📌 Future Improvements
-
-Although this assignment only requires frontend UI, future improvements may include:
-
-* Dark Mode Support
-* Backend Integration
-* Firebase Authentication
-* Dynamic User Data
-* Animations & Transitions
-* Navigation Between Screens
+- Flutter's Sliver-based scroll system (`CustomScrollView`, `SliverGrid`, `SliverAppBar`)
+- Building clean architecture without overengineering
+- Material 3 `ThemeData` and `ColorScheme` for proper dark/light support
+- Separating concerns: constants · models · widgets · screens
+- Handling responsive layouts with `SafeArea` and `MediaQuery`
+- Managing complex nested widgets while keeping code readable
 
 ---
 
-# 👨‍💻 Developed By
+## 📌 Future Improvements
 
-## Md Shahajalal Mahmud
+Although this assignment only requires frontend UI, future enhancements may include:
 
-Flutter Learner • Android Developer • UI Enthusiast
+- Navigation between multiple profile screens (Instagram, Facebook, LinkedIn, GitHub)
+- Animated story highlight ring
+- Smooth page transitions
+- Firebase Authentication & real user data
+- Dynamic post loading from an API
+
+---
+
+## 👨‍💻 Developed By
+
+### Md Shahajalal Mahmud
+
+Flutter Learner · Android Developer · UI Enthusiast
+
+**Instagram:** [@shahjalal_mahmud](https://instagram.com/shahjalal_mahmud)
+
+---
 
 ### Bootcamp
 
-National Android Development Bootcamp by BDApps & Ostad
+**National Android Development Bootcamp**
+by **BDApps & Ostad**
 
 ---
 
-# 🙏 Acknowledgements
+## 🙏 Acknowledgements
 
 Special thanks to:
 
-* BDApps
-* Ostad Platform
-* Course Mentor & Instructors
-* Flutter Community
-
-for providing learning resources and guidance.
+- **BDApps** — for organizing this bootcamp
+- **Ostad Platform** — for the learning infrastructure
+- **Course Mentor & Instructors** — for guidance and feedback
+- **Flutter Community** — for incredible documentation and resources
 
 ---
 
-# 📄 License
+## 📄 License
 
-This project is created for educational and assignment purposes only.
-
-The UI designs are inspired by publicly available social media applications such as Instagram, Facebook, LinkedIn, and GitHub.
+This project is created for **educational and assignment purposes only.**
+The UI design is inspired by Instagram, a product of Meta Platforms, Inc.
 All respective trademarks and copyrights belong to their original owners.
 
 ---
 
-# ⭐ Final Note
-
-This project represents my learning journey in Flutter UI development through the National Android Development Bootcamp.
+> ⭐ *This project represents my hands-on learning journey in Flutter UI development through the National Android Development Bootcamp.*
