@@ -1,24 +1,32 @@
 import 'package:flutter/material.dart';
-
-import 'ProfileScreen.dart';
+import 'core/theme/app_theme.dart';
+import 'presentation/screens/instagram_profile_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const InstagramProfileApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+/// Root application widget.
+/// Uses [ThemeMode.system] to follow the device's light/dark preference.
+class InstagramProfileApp extends StatelessWidget {
+  const InstagramProfileApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Instagram Profile',
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Class Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: ProfileScreen(),
+
+      // ---- Light theme ----
+      theme: AppTheme.light,
+
+      // ---- Dark theme ----
+      darkTheme: AppTheme.dark,
+
+      // ---- Follow system preference automatically ----
+      themeMode: ThemeMode.system,
+
+      home: const InstagramProfileScreen(),
     );
   }
 }
-
