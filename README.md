@@ -143,8 +143,8 @@ Make sure you have these installed:
 **1. Clone the repository**
 
 ```bash
-git clone <your-repository-link>
-cd instagram_profile
+git clone https://github.com/shahjalal-mahmud/flutter-profile-ui-collection.git
+cd flutter-profile-ui-collection
 ```
 
 **2. Install dependencies**
@@ -251,7 +251,7 @@ Although this assignment only requires frontend UI, future enhancements may incl
 
 Flutter Learner · Android Developer · UI Enthusiast
 
-**Instagram:** [@shahjalal_mahmud](https://instagram.com/shahjalal_mahmud)
+**Instagram:** [@shahjalal_mahmud](https://www.instagram.com/shahjalal_mahmud?igsh=bDZ0M2Jma2p1ZzJo)
 
 ---
 
