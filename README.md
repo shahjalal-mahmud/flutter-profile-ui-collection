@@ -61,29 +61,19 @@ No backend, authentication, database, or API integration is included.
 
 # 📸 Screenshots
 
-## Instagram Profile UI
+## 🎯 Original Instagram Profile (Reference UI)
 
-```md
-/assets/screenshots/instagram_profile.png
-```
+| Dark Mode                                                      | Light Mode                                                       |
+|----------------------------------------------------------------|------------------------------------------------------------------|
+| ![Instagram Dark](assets/screenshots/instagram_real_dark.jpeg) | ![Instagram Light](assets/screenshots/instagram_real_light.jpeg) |
 
-## Facebook Profile UI
+---
 
-```md
-/assets/screenshots/facebook_profile.png
-```
+## 📱 Flutter Assignment Output
 
-## LinkedIn Profile UI
-
-```md
-/assets/screenshots/linkedin_profile.png
-```
-
-## GitHub Profile UI
-
-```md
-/assets/screenshots/github_profile.png
-```
+| Dark Mode                                                  | Light Mode                                                   |
+|------------------------------------------------------------|--------------------------------------------------------------|
+| ![Flutter Dark](assets/screenshots/flutter_dark_mode.jpeg) | ![Flutter Light](assets/screenshots/flutter_light_mode.jpeg) |
 
 ---
 
