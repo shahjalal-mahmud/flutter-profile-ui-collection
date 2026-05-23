@@ -58,10 +58,10 @@ class _ProfileAvatar extends StatelessWidget {
         Container(
           width: AppSizes.profileImageSize,
           height: AppSizes.profileImageSize,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             shape: BoxShape.circle,
             // Subtle story-ring gradient like Instagram
-            gradient: const LinearGradient(
+            gradient: LinearGradient(
               colors: [
                 AppColors.storyRingGradientStart,
                 AppColors.storyRingGradientMid,

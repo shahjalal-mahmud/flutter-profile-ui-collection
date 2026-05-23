@@ -16,13 +16,13 @@ class PostModel {
 /// Static dummy post data — 9 posts matching the screenshot layout.
 /// Images are placeholders; replace with real assets.
 final List<PostModel> dummyPosts = [
-  PostModel(id: 'p1', imagePath: 'assets/images/post_1.jpg', isMultiPhoto: true),
-  PostModel(id: 'p2', imagePath: 'assets/images/post_2.jpg', isMultiPhoto: true),
-  PostModel(id: 'p3', imagePath: 'assets/images/post_3.jpg'),
-  PostModel(id: 'p4', imagePath: 'assets/images/post_4.jpg'),
-  PostModel(id: 'p5', imagePath: 'assets/images/post_5.jpg', isMultiPhoto: true),
-  PostModel(id: 'p6', imagePath: 'assets/images/post_6.jpg'),
-  PostModel(id: 'p7', imagePath: 'assets/images/post_7.jpg'),
-  PostModel(id: 'p8', imagePath: 'assets/images/post_8.jpg'),
-  PostModel(id: 'p9', imagePath: 'assets/images/post_9.jpg'),
+  const PostModel(id: 'p1', imagePath: 'assets/images/post_1.jpg', isMultiPhoto: true),
+  const PostModel(id: 'p2', imagePath: 'assets/images/post_2.jpg', isMultiPhoto: true),
+  const PostModel(id: 'p3', imagePath: 'assets/images/post_3.jpg'),
+  const PostModel(id: 'p4', imagePath: 'assets/images/post_4.jpg'),
+  const PostModel(id: 'p5', imagePath: 'assets/images/post_5.jpg', isMultiPhoto: true),
+  const PostModel(id: 'p6', imagePath: 'assets/images/post_6.jpg'),
+  const PostModel(id: 'p7', imagePath: 'assets/images/post_7.jpg'),
+  const PostModel(id: 'p8', imagePath: 'assets/images/post_8.jpg'),
+  const PostModel(id: 'p9', imagePath: 'assets/images/post_9.jpg'),
 ];
