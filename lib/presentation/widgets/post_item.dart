@@ -47,7 +47,7 @@ class _PostIndicatorIcon extends StatelessWidget {
       width: 20,
       height: 20,
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.15),
+        color: Colors.white.withValues(alpha: 0.15),
         borderRadius: BorderRadius.circular(4),
       ),
       child: Icon(
